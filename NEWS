@@ -1,0 +1,24 @@
+TODO
+====
+
+mccabe-thiele 0.1.3-alpha (2022-10-06)
+======================================
+* Included handling bad inputs
+* Minor changes on documentation
+* New input order of qR2S
+
+mccabe-thiele 0.1.2 (2022-10-05)
+======================================
+* Major changes on documentation and functions
+* Function qR2S included
+* Exception for saturated liquid feed resolved
+
+mccabe-thiele 0.1.1 (2022-10-01)
+======================================
+* Minor changes in documentation
+* First release
+* Package under construction
+
+mccabe-thiele 0.1.0 (2022-10-01)
+======================================
+* Unreleased
