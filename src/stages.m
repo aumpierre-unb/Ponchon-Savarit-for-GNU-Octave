@@ -61,7 +61,7 @@ function [N]=stages(data,X,q,R,fig=true)
     # q=0.54;
     # r=refmin(data,x,q);
     # R=1.70*r;
-    # N=stages(data,x,q,R,false,false)
+    # N=stages(data,x,q,R)
     #
     # # Compute the number of theoretical stages
     # # of a distillation column for acetone and methanol
@@ -91,7 +91,7 @@ function [N]=stages(data,X,q,R,fig=true)
     # q=1;
     # r=refmin(data,x,q);
     # R=1.70*r;
-    # N=stages(data,x,q,R,false,false)
+    # N=stages(data,x,q,R)
     #
     # See also: refmin, qR2S.
     xD=X(1);
@@ -124,7 +124,7 @@ function [N]=stages(data,X,q,R,fig=true)
 
     hlambda=(hdelta-hF)/(xD-xF)*(xB-xF)+hF;
 
-    x2=myinterp(g,[xD hdelta],[xB hlambda]);
+    x2=myinterp(g,[xD hdelta],[xB hlambda],xB,xD);
 
     y=[xD];
     x=[f(y(end))];
@@ -134,7 +134,7 @@ function [N]=stages(data,X,q,R,fig=true)
         else
             P=[xB hlambda];
         end
-        Q=[x(end);g(x(end))];
+        Q=[x(end) g(x(end))];
         y=[y;myinterp(k,P,Q)];
         x=[x;f(y(end))];
     end
@@ -154,8 +154,8 @@ function [N]=stages(data,X,q,R,fig=true)
         hold on;plot(data(:,3),data(:,4),'-rd');
         xlabel('{\itx},{\ity}');
         ylabel('{\ith},{\itH}');
-        hold on, plot(reshape([x y]',2*size(x,1),1),...
-        reshape([h H]',2*size(x,1),1),'-c');
+        hold on, plot(reshape([x y]'(1:end-1),2*size(x,1)-1,1),...
+                      reshape([h H]'(1:end-1),2*size(x,1)-1,1),'-c');
         hold on;plot([xD xD xD xF xB xB xB],...
                      [g(xD) k(xD) hdelta hF hlambda g(xB) k(xB)],'-go');
         hold on;plot(sort([x1 xF y1]),sort([h1 hF H1]),'--m');
@@ -166,8 +166,8 @@ function [N]=stages(data,X,q,R,fig=true)
         xlabel('{\itx}');
         ylabel('{\ity}');
         hold on;plot([0 1],[0 1],'--k');
-        hold on,plot(x,y,'-gd');
         hold on;stairs(x,y,'c');
+        hold on,plot(x,y,'-gd');
         hold on;plot([0 1],foo([0 1]),'-m')
         hold on;plot([xF xF],[0 1],'--m');
         hold on;plot([xD xD],[0 1],'--b');
