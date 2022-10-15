@@ -1,35 +1,39 @@
-# `mccabe-thiele` Toolbox for GNU-Octave (under construction)
+# `ponchon-savarit` Toolbox for GNU-Octave
 
-[![DOI](https://zenodo.org/badge/544044423.svg)](https://zenodo.org/badge/latestdoi/544044423)
+<!--[![DOI](https://zenodo.org/badge/544044423.svg)](https://zenodo.org/badge/latestdoi/544044423)-->
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/aumpierre-unb/McCabe-Thiele-for-GNU-Octave)
+<!--![GitHub release (latest by date)](https://img.shields.io/github/v/release/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave)-->
 
-## Installing and Loading `mccabe-thiele`
+![Illustrative graphical output](https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/blob/main/pics/downup_matrix.png "Example of graphical output - from x-y data set, stages from bottom to top")
+
+![Illustrative graphical output](https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/blob/main/pics/updown_satliq.png "Example of graphical output - from y=f(x) function and saturated liquid feed, stages from top to bottom")
+
+## Installing and Loading `ponchon-savarit`
 
 ```dotnetcli
-# use this call to install version 0.1.2, or modify the command line for match the version
-pkg install https://github.com/aumpierre-unb/McCabe-Thiele-for-GNU-Octave/archive/refs/tags/v0.1.2.tar.gz
-pkg load mccabe-thiele
+# use this call to install version 0.1.0, or modify the command line for match the version
+pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/v0.1.0.tar.gz
+pkg load Ponchon-Savarit
 ```
 
-## Citation of `mccabe-thiele`
+## Citation of `ponchon-savarit`
 
-You can cite all versions (both released and pre-released), by using
+<!--You can cite all versions (both released and pre-released), by using
 [DOI 10.5281/zenodo.7133683](https://doi.org/10.5281/zenodo.7133683).
 
 This DOI represents all versions, and will always resolve to the latest one.
 
-For citation of the last released version of `mccabe-thiele`, please check CITATION file at the [maintainer's repository](https://github.com/aumpierre-unb/McCabe-Thiele-for-GNU-Octave).
+For citation of the last released version of `ponchon-savarit`, please check CITATION file at the [maintainer's repository](https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave).-->
 
 ---
 
-The following is a very short introduction to the `mccabe-thiele` Toolbox for GNU Octave.
+The following is a very short introduction to the `ponchon-savarit` toolbox for GNU Octave.
 
-This text is divided in two main sections: The Theory and The `mccabe-thiele` Toolbox.
+This text is divided in two main sections: The Theory and The `ponchon-savarit` Toolbox.
 
 ## The Theory
 
-The McCabe-Thiele method is a simplified method to calculate the number of theoretical stages of equilibrium of a distillation column for a two component mixture. The method depends of three premisses:
+<!--The Ponchon-Savarit method is a simplified method to calculate the number of theoretical stages of equilibrium of a distillation column for a two component mixture. The method depends of three premisses:
 
 - components have the same molar heats of vaporization,
 - for every mole of liquid vaporized, a mole of vapor is condensed, and
@@ -39,15 +43,15 @@ Distillation is a unit operation based on the difference of volatility to separa
 
 Typically, continuous distillation is performed in a vertical column fed at its intermediate section while products at its top and bottom are recovered. As a rule of thumb, the higher the column, the higher the number of stages of equilibrium and the best is the separations of the components of the mixture fed.
 
-The McCabe-Thiele method is a simplifyied method to calculate the number of stages of equilibrium of a distillation column fo a two component mixture.
+The Ponchon-Savarit method is a simplified method to calculate the number of stages of equilibrium of a distillation column fo a two component mixture.
 
 ### Stages of Equilibrium
 
-An equilibrium stage is an abstract control volume such that the effluent currents are all in thermodynamic equilibrium. All multistage operatations are based on the concept of satge of equilibrium.
+An equilibrium stage is an abstract control volume such that the effluent currents are all in thermodynamic equilibrium. All multistage operations are based on the concept of stage of equilibrium.
 
 ### The Feed Line
 
-Idealy, the feed current separates into a liquid stream *q* and a vapor stream 1-*q*, where *q* is the liquid fraction of the feed. If *x*<sub>*n*+1</sub>, *y*<sub>*n*</sub> and *x*<sub>*F*</sub> are the compositions of the liquid and the vapor streams at the feed inlet and the composition of the feed, respectively, then the material balance is
+Ideally, the feed current separates into a liquid stream *q* and a vapor stream 1-*q*, where *q* is the liquid fraction of the feed. If *x*<sub>*n*+1</sub>, *y*<sub>*n*</sub> and *x*<sub>*F*</sub> are the compositions of the liquid and the vapor streams at the feed inlet and the composition of the feed, respectively, then the material balance is
 
 $$
 (1 - q)\ y_n + q\ x_{n+1} = x_F
@@ -109,11 +113,11 @@ $$
 S = {V_0 \over B}
 $$
 
-where *B* = *F* - *D* is the column's bottom product stream. It is also possible to calculate the stages of equilibrium of a column using the McCabe-Thiele method.
+where *B* = *F* - *D* is the column's bottom product stream. It is also possible to calculate the stages of equilibrium of a column using the Ponchon-Savarit method.-->
 
-## The `mccabe-thiele` Toolbox
+## The `ponchon-savarit` Toolbox
 
-`mccabe-thiele` provides the following functions:
+<!--`ponchon-savarit` provides the following functions:
 
 - `stages`
 - `refmin`
@@ -122,9 +126,11 @@ where *B* = *F* - *D* is the column's bottom product stream. It is also possible
 ### `stages`
 
 `stages` computes the number of theoretical stages
-of a distillation column using the method of McCabe-Thiele, given
-a function *y* = *y*(*x*) that relates the liquid fraction *x* and the vapor fraction *y*, or
-a *x*-*y* matrix of the liquid and the vapor fractions,
+of a distillation column
+using the method of Ponchon-Savarit given
+a function *y* = *y*(*x*) that relates
+the liquid fraction *x* and the vapor fraction *y*,
+or a *x*-*y* matrix of the liquid and the vapor fractions,
 the vector of the fractions of the products and the feed,
 the feed quality, and
 the reflux ratio at the top of the column.
@@ -191,7 +197,7 @@ the reflux ratio R at the top of the column is
 and plot a schematic diagram of the solution:
 
 ```dotnetcli
-y=@(x) (x.^1.11 .* (1-x).^1.09 + x);
+y=@(x) (x.^0.9 .* (1-x).^1.2 + x);
 x=[0.88 0.46 0.11];
 q=1;
 r=refmin(y,x,q);
@@ -202,9 +208,11 @@ N=stages(y,x,q,R)
 ### `refmin`
 
 `refmin` computes the minimum value of the reflux ratio
-of a distillation column, given
-a function *y* = *y*(*x*) that relates the liquid fraction *x* and the vapor fraction *y*, or
-a *x*-*y* matrix of the liquid and the vapor fractions,
+of a distillation column
+using the method of Ponchon-Savarit given
+a function *y* = *y*(*x*) that relates
+the liquid fraction *x* and the vapor fraction *y*,
+or a *x*-*y* matrix of the liquid and the vapor fractions,
 the vector of the fractions of the distillate and the feed, and
 the feed quality.
 
@@ -251,7 +259,7 @@ the composition of the feed is 46 %,
 the feed is saturated liquid:
 
 ```dotnetcli
-y=@(x) (x.^1.11 .* (1-x).^1.09 + x);
+y=@(x) (x.^0.9 .* (1-x).^1.2 + x);
 x=[0.88 0.46];
 q=0.54;
 r=refmin(y,x,q)
@@ -259,7 +267,9 @@ r=refmin(y,x,q)
 
 ### `qR2S`
 
-`qR2S` computes the reflux ratio at the bottom of the column, given
+`qR2S` computes the reflux ratio at the bottom
+of a distillation column
+using the method of Ponchon-Savarit given
 the reflux ratio at the top of the column,
 the vector of the fractions of the products and the feed, and
 the feed quality.
@@ -301,7 +311,7 @@ x=[0.88 0.46 0.11];
 q=1;
 R=2;
 S=qR2S(R,x,q)
-```
+```-->
 
 Copyright &copy; 2022 Alexandre Umpierre
 
