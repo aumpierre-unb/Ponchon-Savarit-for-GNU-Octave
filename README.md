@@ -11,7 +11,7 @@
 # Installing and Loading `ponchon-savarit`
 
 ```dotnetcli
-use this call to install version 0.1.0, or modify the command line for match the version
+# use this call to install version 0.1.0, or modify the command line for match the version
 pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/v0.1.0.tar.gz
 pkg load ponchon-savarit
 ```
