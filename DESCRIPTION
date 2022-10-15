@@ -1,9 +1,9 @@
 Name: ponchon-savarit
-Version: 0.1.0
+Version: 0.1.1-alpha
 Date: 2022-10-15
 Author: Alexandre Umpierre (aumpierre@gmail.com)
 Maintainer: Alexandre Umpierre
-Title: Poncon-Savarit
+Title: Ponchon-Savarit
 Description: A toolbox for the Ponchon-Savarit method.
 Categories: package
 Depends: octave (>=4.0.0)
