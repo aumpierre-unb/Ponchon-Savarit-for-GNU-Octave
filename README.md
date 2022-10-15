@@ -133,7 +133,7 @@ $$
 
 where *x*<sub>*F*</sub> and *h*<sub>*F*</sub> are
 the composition and the enthalpy of the feed and
-${\it\Lambda}$, *x*<sub>${\it\Lambda}$</sub> and *h*<sub>${\it\Lambda}</sub> are
+${\it\Lambda}$, *x*<sub>${\it\Lambda}$</sub> and *h*<sub>${\it\Lambda}$</sub> are
 the downcolumn stream of the stripping section and its composition and enthalpy.
 
 The enthalpy of the feed *h*<sub>*F*</sub> can be calculated
