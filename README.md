@@ -18,12 +18,12 @@ pkg load Ponchon-Savarit
 
 # Citation of `ponchon-savarit`
 
-<!--You can cite all versions (both released and pre-released), by using
-[DOI 10.5281/zenodo.7133683](https://doi.org/10.5281/zenodo.7133683).
+You can cite all versions (both released and pre-released), by using
+[DOI 10.5281/zenodo.7133683](https://doi.org/10.5281/zenodo.7211819).
 
 This DOI represents all versions, and will always resolve to the latest one.
 
-For citation of the last released version of `ponchon-savarit`, please check CITATION file at the [maintainer's repository](https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave).-->
+For citation of the last released version of `ponchon-savarit`, please check CITATION file at the [maintainer's repository](https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave).
 
 ---
 
