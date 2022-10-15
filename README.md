@@ -16,7 +16,7 @@ pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/arch
 pkg load Ponchon-Savarit
 ```
 
-#Citation of `ponchon-savarit`
+# Citation of `ponchon-savarit`
 
 <!--You can cite all versions (both released and pre-released), by using
 [DOI 10.5281/zenodo.7133683](https://doi.org/10.5281/zenodo.7133683).
