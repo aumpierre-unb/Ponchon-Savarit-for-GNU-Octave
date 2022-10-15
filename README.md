@@ -8,7 +8,7 @@
 
 ![Illustrative graphical output](https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/blob/main/pics/updown_satliq.png "Example of graphical output - from y=f(x) function and saturated liquid feed, stages from top to bottom")-->
 
-#Installing and Loading `ponchon-savarit`
+# Installing and Loading `ponchon-savarit`
 
 ```dotnetcli
 use this call to install version 0.1.0, or modify the command line for match the version
@@ -31,7 +31,7 @@ The following is a very short introduction to the `ponchon-savarit` toolbox for 
 
 This text is divided in two main sections: The Theory and The `ponchon-savarit` Toolbox.
 
-#The Theory
+# The Theory
 
 The Ponchón-Savarit graphical method is a method to calculate the number of theoretical stages of equilibrium of a distillation column for a two component mixture. It allows for variations on the heat of vaporization, the most demanding premise of the McCabe-Thiele method. Ponchón-Savarit method demands that the column be adiabatic, except for its bottom and top, where there must heat exchange in order to maintain reflux streams.
 
@@ -39,11 +39,11 @@ Distillation is a unit operation based on the difference of volatility to separa
 
 Typically, continuous distillation is performed in a vertical column fed at its intermediate section while products at its top and bottom are recovered. As a rule of thumb, the higher the column, the higher the number of stages of equilibrium and the best is the separations of the components of the mixture fed.
 
-##Theoretical Stage of Equilibrium
+## Theoretical Stage of Equilibrium
 
 A theoretical stage of equilibrium is an abstract control volume such that the effluent currents are all in thermodynamic equilibrium. All multistage operations are based on the concept of stage of equilibrium.
 
-##Material and Enthalpy Balances
+## Material and Enthalpy Balances
 
 The global and specific material balances and
 the enthalpy balance for any equilibrium stage *n* are given by
@@ -157,7 +157,7 @@ Analogously to the rectifying section,
 ${\it\Lambda}$ = *B* and *x*<sub>${\it\Lambda}$</sub> = *x*<sub>*B*</sub>,
 where *B* and *x*<sub>*B*</sub> are the column's bottom product and its composition.
 
-#The `ponchon-savarit` Toolbox
+# The `ponchon-savarit` Toolbox
 
 `ponchon-savarit` provides the following functions:
 
@@ -165,7 +165,7 @@ where *B* and *x*<sub>*B*</sub> are the column's bottom product and its composit
 - `refmin`
 - `qR2S`
 
-##`stages`
+## `stages`
 
 `stages` computes the number of theoretical stages
 of a distillation column using the Ponchon-Savarit method given
@@ -255,7 +255,7 @@ R=1.70*r;
 N=stages(data,x,q,R,false,false)
 ```
 
-##`refmin`
+## `refmin`
 
 `refmin` computes the minimum value of the reflux ratio
 of a distillation column using the Ponchón-Savarit method given
@@ -325,7 +325,7 @@ q=1;
 r=refmin(data,x,q)
 ```
 
-##`qR2S`
+## `qR2S`
 
 `qR2S` computes the reflux ratio at the bottom
 of a distillation column
