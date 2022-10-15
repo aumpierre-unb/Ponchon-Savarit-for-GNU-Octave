@@ -24,10 +24,10 @@ function [R]=refmin(data,X,q)
     #
     # refmin computes the minimum value of the reflux ratio
     #  of a distillation column
-    #  using the method of Ponchon-Savarit given
+    #  using the Ponchon-Savarit method given
     #  a x-h-y-H matrix of the liquid and the vapor fractions
-    #  at equilibrium and thier enthalpies,
-    #  the vector of the fractions of the distillate and the feed, and
+    #  at equilibrium and their enthalpies,
+    #  the vector of the fractions of the products and the feed, and
     #  the feed quality.
     # If feed is a saturated liquid, feed quality q = 1,
     #  feed quality is reset to q = 1 - 1e-10.

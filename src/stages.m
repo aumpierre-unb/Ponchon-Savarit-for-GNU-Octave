@@ -20,22 +20,18 @@
 function [N]=stages(data,X,q,R,fig=true)
     # Syntax:
     #
-    # [N]=stages(data,X,q,R[,updown[,fig]])
+    # [N]=stages(data,X,q,R[,fig])
     #
     # stages computes the number of theoretical stages
     #  of a distillation column
-    #  using the method of Ponchon-Savarit given
+    #  using the Ponchon-Savarit method given
     #  a x-h-y-H matrix of the liquid and the vapor fractions
-    #  at equilibrium and thier enthalpies,
+    #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed,
     #  the feed quality, and
     #  the reflux ratio at the top of the column.
     # If feed is a saturated liquid, feed quality q = 1,
     #  feed quality is reset to q = 1 - 1e-10.
-    # By default, theoretical stages are computed
-    #  from the stripping section to the rectifying section, updown = true.
-    # If updown = false is given, theoretical stages are computed
-    #  from the rectifying section to the stripping section.
     # By default, stages plots a schematic diagram of the solution, fig = true.
     # If fig = false is given, no plot is shown.
     #
