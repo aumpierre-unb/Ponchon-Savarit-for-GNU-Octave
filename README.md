@@ -69,15 +69,15 @@ the material enthalpy of liquid and vapor streams.
 For any theoretical stage of the rectifying section,
 
 $$
-\Delta = V_n - L_{n+1}
+{\it\Delta} = V_n - L_{n+1}
 $$
 
 $$
-\Delta\ x_\Delta = V_n\ y_n - L_{n+1}\ x_{n+1}
+{\it\Delta}\ x_{\it\Delta} = V_n\ y_n - L_{n+1}\ x_{n+1}
 $$
 
 $$
-\Delta\ h_\Delta = V_n\ H_n - L_{n+1}\ h_{n+1}
+{\it\Delta}\ h_{\it\Delta} = V_n\ H_n - L_{n+1}\ h_{n+1}
 $$
 
 where ${\it\Delta}$, *x*<sub>${\it\Delta}$</sub> and *h*<sub>${\it\Delta}$</sub>
