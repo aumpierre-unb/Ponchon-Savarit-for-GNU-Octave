@@ -398,6 +398,11 @@ R=2;
 S=qR2S(data,x,q,R)
 ```
 
+### See also:
+
+[McCabe-Thiele-for-GNU-Octave](https://github.com/aumpierre-unb/McCabe-Thiele-for-GNU-Octave),
+[Internal-Fluid-Flow-for-GNU-Octave](https://github.com/aumpierre-unb/Internal-Fluid-Flow-for-GNU-Octave).
+
 Copyright &copy; 2022 Alexandre Umpierre
 
 email: <aumpierre@gmail.com>
