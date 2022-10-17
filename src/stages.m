@@ -108,7 +108,7 @@ function [N]=stages(data,X,q,R,fig=true)
     end
     f=@(x) interp1(data(:,3),data(:,1),x);
     g=@(x) interp1(data(:,1),data(:,2),x);
-    k=@(x) interp1(data(:,3),data(:,4),x,'linear',0);
+    k=@(x) interp1(data(:,3),data(:,4),x);#,'linear',0);
 
     foo=@(x) q/(q-1)*x-xF/(q-1);
     bar=@(x) interp1(data(:,1),data(:,3),x)-foo(x);
@@ -124,18 +124,18 @@ function [N]=stages(data,X,q,R,fig=true)
 
     hlambda=(hdelta-hF)/(xD-xF)*(xB-xF)+hF;
 
-    x2=myinterp(g,[xD hdelta],[xB hlambda],xB,xD);
+    x2=myinterp(g,[xD hdelta],[xB hlambda],min(data(:,1)),max(data(:,1)));
 
     y=[xD];
     x=[f(y(end))];
     while x(end)>xB
         if x(end)>x2
-            P=[xD hdelta];
+            P=[xD;hdelta];
         else
-            P=[xB hlambda];
+            P=[xB;hlambda];
         end
-        Q=[x(end) g(x(end))];
-        y=[y;myinterp(k,P,Q)];
+        Q=[x(end);g(x(end))];
+        y=[y;myinterp(k,P,Q,min(data(:,3)),max(data(:,3)))];
         x=[x;f(y(end))];
     end
 
@@ -152,19 +152,17 @@ function [N]=stages(data,X,q,R,fig=true)
         subplot(2,1,1)
         plot(data(:,1),data(:,2),'-bd');
         hold on;plot(data(:,3),data(:,4),'-rd');
-        xlabel('{\itx},{\ity}');
-        ylabel('{\ith},{\itH}');
         hold on, plot(reshape([x y]'(1:end-1),2*size(x,1)-1,1),...
                       reshape([h H]'(1:end-1),2*size(x,1)-1,1),'-c');
         hold on;plot([xD xD xD xF xB xB xB],...
                      [g(xD) k(xD) hdelta hF hlambda g(xB) k(xB)],'-go');
         hold on;plot(sort([x1 xF y1]),sort([h1 hF H1]),'--m');
+        xlabel('{\itx},{\ity}');
+        ylabel('{\ith},{\itH}');
         grid on;
         set(gca,'fontsize',16);
         subplot(2,1,2);
         plot(data(:,1),data(:,3),'-ok');
-        xlabel('{\itx}');
-        ylabel('{\ity}');
         hold on;plot([0 1],[0 1],'--k');
         hold on;stairs(x,y,'c');
         hold on,plot(x,y,'-gd');
@@ -173,6 +171,8 @@ function [N]=stages(data,X,q,R,fig=true)
         hold on;plot([xD xD],[0 1],'--b');
         hold on;plot([xB xB],[0 1],'--r');
         axis([0 1 0 1]);
+        xlabel('{\itx}');
+        ylabel('{\ity}');
         grid on;
         set(gca,'fontsize',16);
     end

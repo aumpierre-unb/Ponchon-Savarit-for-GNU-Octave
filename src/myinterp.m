@@ -17,7 +17,7 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function y=myinterp(f,P,Q,a=0,b=1)
+function y=myinterp(f,P,Q,a,b)
     g=@(x) (Q(2)-P(2))/(Q(1)-P(1))*(x-P(1))+P(2);
     h=@(x) f(x)-g(x);
     y=bissection(h,a,b);

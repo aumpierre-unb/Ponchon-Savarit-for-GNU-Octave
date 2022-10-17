@@ -368,7 +368,7 @@ x=[0.88 0.46 0.11];
 q=0.54;
 R=2;
 S=qR2S(x,q,R)
-```dotnetcli
+```
 
 Compute the reflux ratio at the bottom
 of a distillation column for acetone and methanol given
@@ -398,7 +398,7 @@ R=2;
 S=qR2S(data,x,q,R)
 ```
 
-### See also:
+### See Also
 
 [McCabe-Thiele-for-GNU-Octave](https://github.com/aumpierre-unb/McCabe-Thiele-for-GNU-Octave),
 [Internal-Fluid-Flow-for-GNU-Octave](https://github.com/aumpierre-unb/Internal-Fluid-Flow-for-GNU-Octave).
