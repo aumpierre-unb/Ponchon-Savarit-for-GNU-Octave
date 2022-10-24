@@ -17,8 +17,18 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function y=myinterp(f,P,Q,a,b)
+function [x]=myinterp(f,P,Q,a,b)
+    # Syntax:
+    #
+    # [x]=myinterp(f,P,Q,a,b)
+    #
+    # myinterp computes the intecection of
+    #  a function and a stright line defined by two points,
+    #  using bissection method given
+    #  it is between the guess values.
+    # myinterp is an auxiliary function of
+    #  the ponchon-savarit toolbox.
     g=@(x) (Q(2)-P(2))/(Q(1)-P(1))*(x-P(1))+P(2);
     h=@(x) f(x)-g(x);
-    y=bissection(h,a,b);
+    x=bissection(h,a,b);
 end

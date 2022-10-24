@@ -18,6 +18,15 @@
 # It is also available at https://www.gnu.org/licenses/.
 
 function [x2]=bissection(f,x1,x2)
+    # Syntax:
+    #
+    # [x2]=bissection(f,x1,x2)
+    #
+    # bissection computes the root of
+    #  a function using the method of bissection
+    #  given it is between the guess values.
+    # bissection is an auxiliary function of
+    #  the ponchon-savarit toolbox.
     while abs(f(x2))>1e-4
         x=(x1+x2)/2;
         if f(x)*f(x1)>0

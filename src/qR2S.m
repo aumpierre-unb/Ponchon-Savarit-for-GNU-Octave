@@ -41,7 +41,7 @@ function [S]=qR2S(data,X,q,R)
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
     # # the feed quality is 54 %, and
-    # # the reflux ratio at the top of the column is 2.
+    # # the reflux ratio at the top of the column is 2:
     # data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
     #       0.075 0.418 0.193 1.755;
     #       0.17  0.415 0.359 1.685;
@@ -62,7 +62,7 @@ function [S]=qR2S(data,X,q,R)
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
     # # the feed is saturated liquid, and
-    # # the reflux ratio at the top of the column is 2.
+    # # the reflux ratio at the top of the column is 2:
     # data=[2.5e-4 3.235 1.675e-3 20.720; # enthalpy in kcal/mol
     #       0.05   2.666 0.267    20.520;
     #       0.1    2.527 0.418    20.340;
