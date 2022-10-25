@@ -1,12 +1,12 @@
 # Copyright (C) 2022 Alexandre Umpierre
 #
-# This file is part of ponchon-savarit toolbox.
-# ponchon-savarit toolbox is free software:
+# This file is part of ponchon-savarit toolbox for GNU Octave.
+# ponchon-savarit toolbox for GNU Octave is free software:
 # you can redistribute it and/or modify it under the terms
 # of the GNU General Public License (GPL) version 3
 # as published by the Free Software Foundation.
 #
-# ponchon-savarit toolbox is distributed in the hope
+# ponchon-savarit toolbox for GNU Octave is distributed in the hope
 # that it will be useful, but WITHOUT ANY WARRANTY;
 # without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -27,7 +27,7 @@ function [x]=myinterp(f,P,Q,a,b)
     #  using bissection method given
     #  it is between the guess values.
     # myinterp is an auxiliary function of
-    #  the ponchon-savarit toolbox.
+    #  the ponchon-savarit toolbox for GNU Octave.
     g=@(x) (Q(2)-P(2))/(Q(1)-P(1))*(x-P(1))+P(2);
     h=@(x) f(x)-g(x);
     x=bissection(h,a,b);

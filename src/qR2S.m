@@ -1,12 +1,12 @@
 # Copyright (C) 2022 Alexandre Umpierre
 #
-# This file is part of ponchon-savarit toolbox.
-# ponchon-savarit toolbox is free software:
+# This file is part of ponchon-savarit toolbox for GNU Octave.
+# ponchon-savarit toolbox for GNU Octave is free software:
 # you can redistribute it and/or modify it under the terms
 # of the GNU General Public License (GPL) version 3
 # as published by the Free Software Foundation.
 #
-# ponchon-savarit toolbox is distributed in the hope
+# ponchon-savarit toolbox for GNU Octave is distributed in the hope
 # that it will be useful, but WITHOUT ANY WARRANTY;
 # without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -32,6 +32,8 @@ function [S]=qR2S(data,X,q,R)
     #  the reflux ratio at the top of the column.
     # If feed is a saturated liquid, feed quality q = 1,
     #  feed quality is reset to q = 1 - 1e-10.
+    # qR2S is a main function of
+    #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
     #
