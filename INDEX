@@ -1,4 +1,4 @@
-# ponchon-savarit is a package of functions for the Ponchon-Savarit method.
+# ponchon-savarit is a toolbox for the Ponchón-Savarit method for GNU Octave.
 toolbox >> Ponchon-Savarit
 Functions
  stages refmin qR2S
