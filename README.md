@@ -402,6 +402,7 @@ S=qR2S(data,x,q,R)
 ### See Also
 
 [McCabe-Thiele-for-GNU-Octave](https://github.com/aumpierre-unb/McCabe-Thiele-for-GNU-Octave),
+[Psychrometrics-for-GNU-Octave](https://github.com/aumpierre-unb/Psychrometrics-for-GNU-Octave),
 [Internal-Fluid-Flow-for-GNU-Octave](https://github.com/aumpierre-unb/Internal-Fluid-Flow-for-GNU-Octave).
 
 Copyright &copy; 2022 Alexandre Umpierre
