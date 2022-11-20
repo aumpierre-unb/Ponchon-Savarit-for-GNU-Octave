@@ -110,7 +110,7 @@ function [N]=stages(data,X,q,R,fig=true)
     end
     f=@(x) interp1(data(:,3),data(:,1),x);
     g=@(x) interp1(data(:,1),data(:,2),x);
-    k=@(x) interp1(data(:,3),data(:,4),x);#,'linear',0);
+    k=@(x) interp1(data(:,3),data(:,4),x);
 
     foo=@(x) q/(q-1)*x-xF/(q-1);
     bar=@(x) interp1(data(:,1),data(:,3),x)-foo(x);
@@ -152,26 +152,26 @@ function [N]=stages(data,X,q,R,fig=true)
     if fig
         figure('position',[100 100 500 800]);
         subplot(2,1,1)
-        plot(data(:,1),data(:,2),'-bd');
-        hold on;plot(data(:,3),data(:,4),'-rd');
+        plot(data(:,1),data(:,2),'-bd','linewidth',2);
+        hold on;plot(data(:,3),data(:,4),'-rd','linewidth',2);
         hold on, plot(reshape([x y]'(1:end-1),2*size(x,1)-1,1),...
                       reshape([h H]'(1:end-1),2*size(x,1)-1,1),'-c');
         hold on;plot([xD xD xD xF xB xB xB],...
                      [g(xD) k(xD) hdelta hF hlambda g(xB) k(xB)],'-go');
-        hold on;plot(sort([x1 xF y1]),sort([h1 hF H1]),'--m');
+        hold on;plot(sort([x1 xF y1]),sort([h1 hF H1]),'-.*m');
         xlabel('{\itx},{\ity}');
         ylabel('{\ith},{\itH}');
         grid on;
         set(gca,'fontsize',16);
         subplot(2,1,2);
-        plot(data(:,1),data(:,3),'-ok');
-        hold on;plot([0 1],[0 1],'--k');
-        hold on;stairs(x,y,'c');
-        hold on,plot(x,y,'-gd');
-        hold on;plot([0 1],foo([0 1]),'-m')
         hold on;plot([xF xF],[0 1],'--m');
         hold on;plot([xD xD],[0 1],'--b');
         hold on;plot([xB xB],[0 1],'--r');
+        plot(data(:,1),data(:,3),'-ok','linewidth',2);
+        hold on;plot([0 1],[0 1],'--k');
+        hold on;stairs(x,y,'c');
+        hold on,plot(x,y,'-gd');
+        hold on;plot([0 1],[foo(0) foo(1)],'-.m')
         axis([0 1 0 1]);
         xlabel('{\itx}');
         ylabel('{\ity}');
