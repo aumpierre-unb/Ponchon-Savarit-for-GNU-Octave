@@ -162,7 +162,7 @@ function [N]=stages(data,X,q,R,fig=true)
         xlabel('{\itx},{\ity}');
         ylabel('{\ith},{\itH}');
         grid on;
-        set(gca,'fontsize',16,'box','on');
+        set(gca,'fontsize',14,'box','on');
         subplot(2,1,2);
         hold on;plot([xF xF],[0 1],'--m');
         hold on;plot([xD xD],[0 1],'--b');
@@ -176,7 +176,7 @@ function [N]=stages(data,X,q,R,fig=true)
         xlabel('{\itx}');
         ylabel('{\ity}');
         grid on;
-        set(gca,'fontsize',16,'box','on');
+        set(gca,'fontsize',14,'box','on');
     end
 end
 
