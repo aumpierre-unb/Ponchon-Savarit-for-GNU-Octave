@@ -147,7 +147,7 @@ function [N]=stages(data,X,q,R,fig=true)
     h=g(x);
     H=k(y);
 
-    N=size(x,1)-1-1+(xB-x(end-1))/(x(end)-x(end-1));
+    N=size(x,1)-1-1+(xB-y(end-1))/(y(end)-y(end-1));
 
     if fig
         figure('position',[100 100 500 800]);

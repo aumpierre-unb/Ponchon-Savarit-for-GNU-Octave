@@ -5,6 +5,7 @@ ponchon-savarit 0.1.2-alpha (2022-10-24)
 ======================================
 * Minor changes on documentation
 * Help comments included for internal functions
+* Number of stages fixed do the Ponchón-Savarit method
 
 ponchon-savarit 0.1.1 (2022-10-21)
 ======================================
