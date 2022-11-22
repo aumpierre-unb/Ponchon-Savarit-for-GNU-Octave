@@ -171,7 +171,7 @@ function [N]=stages(data,X,q,R,fig=true)
         hold on;plot([0 1],[0 1],'--k');
         hold on;stairs(x,y,'c');
         hold on,plot(x,y,'-gd');
-        hold on;plot([0 1],[foo(0) foo(1)],'-.m')
+        hold on;plot([0 1],foo([0 1]),'-.m')
         axis([0 1 0 1]);
         xlabel('{\itx}');
         ylabel('{\ity}');
