@@ -60,7 +60,7 @@ function [N]=stages(data,X,q,R,fig=true)
     #       0.88  0.300 0.955 1.425;
     #       1.    0.263 1.    1.405];
     # x=[0.88 0.46 0.11];
-    # q=0.54;
+    # q=0.6;
     # r=refmin(data,x,q);
     # R=1.70*r;
     # N=stages(data,x,q,R)
@@ -90,7 +90,7 @@ function [N]=stages(data,X,q,R,fig=true)
     #       0.9    2.266 0.958    17.680;
     #       1.     2.250 1.       17.390];
     # x=[0.88 0.46 0.11];
-    # q=1;
+    # q=.8;
     # r=refmin(data,x,q);
     # R=1.70*r;
     # N=stages(data,x,q,R)
