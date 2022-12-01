@@ -152,31 +152,35 @@ function [N]=stages(data,X,q,R,fig=true)
     if fig
         figure('position',[100 100 500 800]);
         subplot(2,1,1)
+        hold on;
         plot(data(:,1),data(:,2),'-bd','linewidth',1.25);
-        hold on;plot(data(:,3),data(:,4),'-rd','linewidth',1.25);
-        hold on, plot(reshape([x y]'(1:end-1),2*size(x,1)-1,1),...
+        plot(data(:,3),data(:,4),'-rd','linewidth',1.25);
+        plot(reshape([x y]'(1:end-1),2*size(x,1)-1,1),...
                       reshape([h H]'(1:end-1),2*size(x,1)-1,1),'-c');
-        hold on;plot([xD xD xD xF xB xB xB],...
-                     [g(xD) k(xD) hdelta hF hlambda g(xB) k(xB)],'-go');
-        hold on;plot(sort([x1 xF y1]),sort([h1 hF H1]),'-.*m');
+        plot([xD xD xD xF xB xB xB],...
+                     [g(xD) k(xD) hdelta hF hlambda g(xB) k(xB)],'-o','color','#1D8B20');
+        plot(sort([x1 xF y1]),sort([h1 hF H1]),'-.*m');
         xlabel('{\itx},{\ity}');
         ylabel('{\ith},{\itH}');
         grid on;
         set(gca,'fontsize',14,'box','on');
+        hold off;
         subplot(2,1,2);
-        hold on;plot([xF xF],[0 1],'--m');
-        hold on;plot([xD xD],[0 1],'--b');
-        hold on;plot([xB xB],[0 1],'--r');
+        hold on;
+        plot([xF xF],[0 1],'--m');
+        plot([xD xD],[0 1],'--b');
+        plot([xB xB],[0 1],'--r');
         plot(data(:,1),data(:,3),'-ok','linewidth',1.25);
-        hold on;plot([0 1],[0 1],'--k');
-        hold on;stairs(x,y,'c');
-        hold on,plot(x,y,'-gd');
-        hold on;plot([0 1],foo([0 1]),'-.m')
+        plot([0 1],[0 1],'--k');
+        stairs(x,y,'c');
+        plot(x,y,'-d','color','#1D8B20');
+        plot([0 1],foo([0 1]),'-.m')
         axis([0 1 0 1]);
         xlabel('{\itx}');
         ylabel('{\ity}');
         grid on;
         set(gca,'fontsize',14,'box','on');
+        hold off;
     end
 end
 
