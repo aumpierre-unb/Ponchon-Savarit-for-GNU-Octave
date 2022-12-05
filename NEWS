@@ -1,6 +1,10 @@
 TODO
 ====
 
+ponchon-savarit 0.1.3-alpha (2022-12-05)
+======================================
+* Major change on refmin function
+
 ponchon-savarit 0.1.2 (2022-12-03)
 ======================================
 * Minor changes on documentation
