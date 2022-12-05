@@ -252,7 +252,7 @@ x=[0.88 0.46 0.11];
 q=1;
 r=refmin(data,x,q);
 R=1.70*r;
-N=stages(data,x,q,R,false)
+N=stages(data,x,q,R)
 ```
 
 ## `refmin`
