@@ -85,6 +85,7 @@ function [R]=refmin(data,X,q)
     # See also: stages, qR2S.
     xD=X(1);
     xF=X(2);
+    xB=x(3);
     if xD<xF
         error("Inconsistent feed and/or products compositions.");
     end
