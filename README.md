@@ -172,7 +172,7 @@ of a distillation column using the Ponchon-Savarit method given
 a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions
 at equilibrium and their enthalpies,
 the vector of the fractions of the products and the feed,
-the feed quality, and the reflux ratio at the top of the column.
+the feed quality and the reflux ratio at the top of the column.
 If feed is a saturated liquid, feed quality *q* = 1,
 feed quality is reset to *q* = 1 - 1e-10.
 By default, stages plots a schematic diagram of the solution, *fig* = *true*.
@@ -201,7 +201,7 @@ and their enthalpies at equilibrium,
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
 the composition of the column's bottom product is 11 %,
-the feed quality is 52 %, and
+the feed quality is 52 % and
 the reflux ratio at the top of the column is
 70 % higher that the minimum reflux ratio:
 
@@ -230,7 +230,7 @@ and their enthalpies at equilibrium,
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
 the composition of the column's bottom product is 11 %,
-the feed is a saturated liquid, and
+the feed is a saturated liquid and
 the reflux ratio at the top of the column is
 70 % higher that the minimum reflux ratio:
 
@@ -261,7 +261,7 @@ N=stages(data,x,q,R)
 of a distillation column using the Ponchón-Savarit method given
 a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions
 at equilibrium and their enthalpies,
-the vector of the fractions of the products and the feed, and
+the vector of the fractions of the products and the feed and
 the feed quality.
 
 If feed is a saturated liquid, feed quality *q* = 1,
@@ -281,6 +281,7 @@ a matrix that relates the liquid and the vapor fractions
 and their enthalpies at equilibrium,
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
+the composition of the column's bottom product is 11 % and
 the feed quality is 52 %:
 
 ```dotnetcli
@@ -304,6 +305,7 @@ a matrix that relates the liquid and the vapor fractions
 and their enthalpies at equilibrium,
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
+the composition of the column's bottom product is 11 % and
 the feed is a saturated liquid:
 
 ```dotnetcli
@@ -333,7 +335,7 @@ using the Ponchon-Savarit method given
 a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions
 at equilibrium and their enthalpies,
 the vector of the fractions of the products and the feed,
-the feed quality, and
+the feed quality and
 the reflux ratio at the top of the column.
 
 If feed is a saturated liquid, feed quality *q* = 1,
@@ -352,7 +354,7 @@ of a distillation column for oxygen and nitrogen given
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
 the composition of the column's bottom product is 11 %,
-the feed quality is 54 %, and
+the feed quality is 54 % and
 the reflux ratio at the top of the column is 2:
 
 ```dotnetcli
@@ -376,7 +378,7 @@ of a distillation column for acetone and methanol given
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
 the composition of the column's bottom product is 11 %,
-the feed is saturated liquid, and
+the feed is saturated liquid and
 the reflux ratio at the top of the column is 2:
 
 ```dotnetcli

@@ -28,7 +28,7 @@ function [N]=stages(data,X,q,R,fig=true)
     #  a x-h-y-H matrix of the liquid and the vapor fractions
     #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed,
-    #  the feed quality, and
+    #  the feed quality and
     #  the reflux ratio at the top of the column.
     # If feed is a saturated liquid, feed quality q = 1,
     #  feed quality is reset to q = 1 - 1e-10.
@@ -47,7 +47,7 @@ function [N]=stages(data,X,q,R,fig=true)
     # # the composition of the distillate is 88 %,
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
-    # # the feed quality is 52 %, and
+    # # the feed quality is 52 % and
     # # the reflux ratio at the top of the column is
     # # 70 % higher that the minimum reflux ratio:
     # data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
@@ -73,7 +73,7 @@ function [N]=stages(data,X,q,R,fig=true)
     # # the composition of the distillate is 88 %,
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
-    # # the feed is a saturated liquid, and
+    # # the feed is a saturated liquid and
     # # the reflux ratio at the top of the column is
     # # 70 % higher that the minimum reflux ratio:
     # data=[2.5e-4 3.235 1.675e-3 20.720; # enthalpy in kcal/mol
