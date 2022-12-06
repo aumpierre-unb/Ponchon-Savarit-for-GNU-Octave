@@ -201,7 +201,7 @@ and their enthalpies at equilibrium,
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
 the composition of the column's bottom product is 11 %,
-the feed quality is 54 %, and
+the feed quality is 52 %, and
 the reflux ratio at the top of the column is
 70 % higher that the minimum reflux ratio:
 
@@ -216,7 +216,7 @@ data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
       0.88  0.300 0.955 1.425;
       0.1   0.263 1.    1.405];
 x=[0.88 0.46 0.11];
-q=0.54;
+q=0.52;
 r=refmin(data,x,q);
 R=1.70*r;
 N=stages(data,x,q,R,false)
@@ -281,7 +281,7 @@ a matrix that relates the liquid and the vapor fractions
 and their enthalpies at equilibrium,
 the composition of the distillate is 88 %,
 the composition of the feed is 46 %,
-the feed quality is 54 %:
+the feed quality is 52 %:
 
 ```dotnetcli
 data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
@@ -294,7 +294,7 @@ data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
       0.88  0.300 0.955 1.425;
       0.1   0.263 1.    1.405];
 x=[0.88 0.46];
-q=0.54;
+q=0.52;
 r=refmin(data,x,q)
 ```
 
