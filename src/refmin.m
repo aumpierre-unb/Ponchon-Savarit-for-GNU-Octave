@@ -42,7 +42,7 @@ function [R]=refmin(data,X,q)
     # # and their enthalpies at equilibrium,
     # # the composition of the distillate is 88 %,
     # # the composition of the feed is 46 %,
-    # # the feed quality is 54 %:
+    # # the feed quality is 52 %:
     # data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
     #       0.075 0.418 0.193 1.755;
     #       0.17  0.415 0.359 1.685;
@@ -53,7 +53,7 @@ function [R]=refmin(data,X,q)
     #       0.88  0.300 0.955 1.425;
     #       1.    0.263 1.    1.405];
     # x=[0.88 0.46];
-    # q=0.54;
+    # q=0.52;
     # r=refmin(data,x,q)
     #
     # # Compute the minimum value of the reflux ratio
