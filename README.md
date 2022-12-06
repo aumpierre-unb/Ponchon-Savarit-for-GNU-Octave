@@ -9,10 +9,8 @@
 # Installing and Loading `ponchon-savarit`
 
 ```dotnetcli
-# this call installs version 0.1.0 and updates to the latest version
-pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/v0.1.0.tar.gz
-pkg load ponchon-savarit
-pkg update ponchon-savarit
+# e.g. this call installs version 0.1.3
+pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/v0.1.3.tar.gz
 ```
 
 # Citation of `ponchon-savarit`
