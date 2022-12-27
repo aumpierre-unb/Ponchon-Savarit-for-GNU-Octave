@@ -17,11 +17,10 @@ pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/arch
 
 You can cite all versions (both released and pre-released), by using
 [DOI 10.5281/zenodo.7133683](https://doi.org/10.5281/zenodo.7211819).
-
 This DOI represents all versions, and will always resolve to the latest one.
 
-To cite the last released version, please check
-https://zenodo.org/account/settings/github/repository/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave.
+<!--To cite the last released version, please check
+https://zenodo.org/account/settings/github/repository/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave.-->
 
 ---
 
