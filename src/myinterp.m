@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Alexandre Umpierre
+#  Copyright (C) 2022 2023 Alexandre Umpierre
 #
 # This file is part of ponchon-savarit toolbox for GNU Octave.
 # ponchon-savarit toolbox for GNU Octave is free software:
