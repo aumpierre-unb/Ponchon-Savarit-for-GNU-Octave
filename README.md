@@ -11,6 +11,7 @@
 ```dotnetcli
 # e.g. this call installs version 0.1.3
 pkg install https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/v0.1.3.tar.gz
+pkg load ponchon-savarit
 ```
 
 # Citation of `ponchon-savarit`
