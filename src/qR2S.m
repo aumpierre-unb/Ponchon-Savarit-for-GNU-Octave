@@ -17,7 +17,7 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function [S]=qR2S(data,X,q,R)
+function S=qR2S(data,X,q,R)
     # Syntax:
     #
     # [S]=qR2S(data,X,q,R)

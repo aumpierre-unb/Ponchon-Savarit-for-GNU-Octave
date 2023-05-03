@@ -17,7 +17,7 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function [x2]=bissection(f,x1,x2)
+function x2=bissection(f,x1,x2)
     # Syntax:
     #
     # [x2]=bissection(f,x1,x2)

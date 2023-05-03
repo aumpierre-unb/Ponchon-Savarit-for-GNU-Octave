@@ -17,7 +17,7 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function [R]=refmin(data,X,q)
+function R=refmin(data,X,q)
     # Syntax:
     #
     # [R]=refmin(data,X,q)

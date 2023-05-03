@@ -17,7 +17,7 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function [N]=stages(data,X,q,R,fig=true)
+function N=stages(data,X,q,R,fig=true)
     # Syntax:
     #
     # [N]=stages(data,X,q,R[,fig=true])
