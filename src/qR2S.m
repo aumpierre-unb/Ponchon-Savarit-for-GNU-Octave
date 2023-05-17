@@ -24,7 +24,7 @@ function S=qR2S(data,X,q,R)
     #
     # qR2S computes the reflux ratio at the bottom
     #  of a distillation column
-    #  using the Ponchon-Savarit method given
+    #  using the Ponchón-Savarit method given
     #  a x-h-y-H matrix of the liquid and the vapor fractions
     #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed,

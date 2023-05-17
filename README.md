@@ -166,7 +166,7 @@ where *B* and *x*<sub>*B*</sub> are the column's bottom product and its composit
 ## `stages`
 
 `stages` computes the number of theoretical stages
-of a distillation column using the Ponchon-Savarit method given
+of a distillation column using the Ponchón-Savarit method given
 a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions
 at equilibrium and their enthalpies,
 the vector of the fractions of the products and the feed,
@@ -329,7 +329,7 @@ r=refmin(data,x,q)
 
 `qR2S` computes the reflux ratio at the bottom
 of a distillation column
-using the Ponchon-Savarit method given
+using the Ponchón-Savarit method given
 a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions
 at equilibrium and their enthalpies,
 the vector of the fractions of the products and the feed,
