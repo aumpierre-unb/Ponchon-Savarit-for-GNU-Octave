@@ -17,31 +17,31 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function S=qR2S(data,X,q,R)
+function R=qS2R(data,X,q,S)
     # Syntax:
     #
-    # S=qR2S(data,X,q,R)
+    # R=qS2R(data,X,q,R)
     #
-    # qR2S computes the reflux ratio at the bottom
+    # qS2R computes the reflux ratio at the top
     #  of a distillation column
     #  using the Ponchon-Savarit method given
     #  a x-h-y-H matrix of the liquid and the vapor fractions
     #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed,
     #  the feed quality and
-    #  the reflux ratio at the top of the column.
-    # qR2S is a main function of
+    #  the reflux ratio at the bottom of the column.
+    # qS2R is a main function of
     #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
     #
-    # # Compute the reflux ratio at the bottom
+    # # Compute the reflux ratio at the top
     # # of a distillation column for oxygen and nitrogen given
     # # the composition of the distillate is 88 %,
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
     # # the feed quality is 54 % and
-    # # the reflux ratio at the top of the column is 2:
+    # # the reflux ratio at the bottom of the column is 2:
     # data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
     #       0.075 0.418 0.193 1.755;
     #       0.17  0.415 0.359 1.685;
@@ -53,16 +53,16 @@ function S=qR2S(data,X,q,R)
     #       1.    0.263 1.    1.405];
     # x=[0.88 0.46 0.11];
     # q=0.54;
-    # R=2;
-    # S=qR2S(x,q,R)
+    # S=2;
+    # R=qS2R(data,x,q,S)
     #
-    # # Compute the reflux ratio at the bottom
+    # # Compute the reflux ratio at the top
     # # of a distillation column for acetone and methanol given
     # # the composition of the distillate is 88 %,
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
     # # the feed is saturated liquid and
-    # # the reflux ratio at the top of the column is 2:
+    # # the reflux ratio at the bottom of the column is 2:
     # data=[2.5e-4 3.235 1.675e-3 20.720; # enthalpy in kcal/mol
     #       0.05   2.666 0.267    20.520;
     #       0.1    2.527 0.418    20.340;
@@ -78,10 +78,10 @@ function S=qR2S(data,X,q,R)
     #       1      2.250 1        17.390];
     # x=[0.88 0.46 0.11];
     # q=1;
-    # R=2;
-    # S=qR2S(data,x,q,R)
+    # S=2;
+    # S=qS2R(data,x,q,S)
     #
-    # See also: stages, refmin, qS2R, RS2q.
+    # See also: stages, refmin, qR2S, RS2q.
     xD=X(1);
     xF=X(2);
     xB=X(3);
@@ -97,11 +97,12 @@ function S=qR2S(data,X,q,R)
     y1=x2y(x1);
     H1=y2H(y1);
     hF=(H1-h1)/(y1-x1)*(xF-x1)+h1;
-    h2=x2h(xD);
-    H2=y2H(xD);
-    hdelta=(H2-h2)*R+H2;
-    hlambda=(hdelta-hF)/(xD-xF)*(xB-xF)+hF;
     h3=x2h(xB);
     H3=y2H(xB);
-    S=(hlambda-h3)/(h3-H3);
+    hlambda=(h3-H3)*S+h3;
+    hdelta=(hlambda-hF)/(xB-xF)*(xD-xF)+hF;
+    h2=x2h(xD);
+    H2=y2H(xD);
+    R=(hdelta-H2)/(H2-h2);
 end
+

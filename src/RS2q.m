@@ -17,20 +17,20 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function S=qR2S(data,X,q,R)
+function S=RS2q(data,X,R,S)
     # Syntax:
     #
-    # S=qR2S(data,X,q,R)
+    # q=RS2q(data,X,q,R)
     #
-    # qR2S computes the reflux ratio at the bottom
+    # RS2q computes the feed quality
     #  of a distillation column
     #  using the Ponchon-Savarit method given
     #  a x-h-y-H matrix of the liquid and the vapor fractions
     #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed,
-    #  the feed quality and
-    #  the reflux ratio at the top of the column.
-    # qR2S is a main function of
+    #  the reflux ratio at the top of the column and
+    #  the reflux ratio at the bottom of the column.
+    # RS2q is a main function of
     #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
@@ -54,15 +54,15 @@ function S=qR2S(data,X,q,R)
     # x=[0.88 0.46 0.11];
     # q=0.54;
     # R=2;
-    # S=qR2S(x,q,R)
+    # S=RS2q(x,q,R)
     #
-    # # Compute the reflux ratio at the bottom
+    # # Compute the feed quality
     # # of a distillation column for acetone and methanol given
     # # the composition of the distillate is 88 %,
     # # the composition of the feed is 46 %,
     # # the composition of the column's bottom product is 11 %,
-    # # the feed is saturated liquid and
-    # # the reflux ratio at the top of the column is 2:
+    # # the reflux ratio at the top of the column is 2 and
+    # # the reflux ratio at the bottoom of the column is 2:
     # data=[2.5e-4 3.235 1.675e-3 20.720; # enthalpy in kcal/mol
     #       0.05   2.666 0.267    20.520;
     #       0.1    2.527 0.418    20.340;
@@ -77,11 +77,11 @@ function S=qR2S(data,X,q,R)
     #       0.9    2.266 0.958    17.680;
     #       1      2.250 1        17.390];
     # x=[0.88 0.46 0.11];
-    # q=1;
     # R=2;
-    # S=qR2S(data,x,q,R)
+    # S=2;
+    # q=RS2q(data,x,R,S)
     #
-    # See also: stages, refmin, qS2R, RS2q.
+    # See also: stages, refmin, qR2S, qS2R.
     xD=X(1);
     xF=X(2);
     xB=X(3);
@@ -91,17 +91,18 @@ function S=qR2S(data,X,q,R)
     x2y=@(x) interp1(data(:,1),data(:,3),x);
     x2h=@(x) interp1(data(:,1),data(:,2),x);
     y2H=@(y) interp1(data(:,3),data(:,4),y);
-    foo=@(x) q-(x2y(x)-xF)/(x2y(x)-x);
-    x1=bissection(foo,xB,xD);
-    h1=x2h(x1);
-    y1=x2y(x1);
-    H1=y2H(y1);
-    hF=(H1-h1)/(y1-x1)*(xF-x1)+h1;
+    x2H=@(x) interp1(data(:,1),data(:,4),x);
     h2=x2h(xD);
     H2=y2H(xD);
     hdelta=(H2-h2)*R+H2;
-    hlambda=(hdelta-hF)/(xD-xF)*(xB-xF)+hF;
     h3=x2h(xB);
     H3=y2H(xB);
-    S=(hlambda-h3)/(h3-H3);
+    hlambda=(h3-H3)*S+h3;
+    hF=(hdelta-hlambda)/(xD-xB)*(xF-xB)+hlambda;
+    foo=@(x) (x2H(x)-x2h(x))/(x2y(x)-x)-(x2h(x)-hF)/(x-xF)
+    x0=interp2(x2h,z,[xB hlambda],[xD hdelta])
+    x1=bissection(foo,xB,xD);
+    y1=x2y(x1);
+    q=(y1-xF)/(y1-x1);
 end
+

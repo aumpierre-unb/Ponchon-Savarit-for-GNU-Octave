@@ -20,7 +20,7 @@
 function N=stages(data,X,q,R,fig=true)
     # Syntax:
     #
-    # [N]=stages(data,X,q,R[,fig=true])
+    # N=stages(data,X,q,R[,fig=true])
     #
     # stages computes the number of theoretical stages
     #  of a distillation column
@@ -30,8 +30,6 @@ function N=stages(data,X,q,R,fig=true)
     #  the vector of the fractions of the products and the feed,
     #  the feed quality and
     #  the reflux ratio at the top of the column.
-    # If feed is a saturated liquid, feed quality q = 1,
-    #  feed quality is reset to q = 1 - 1e-10.
     # By default, stages plots a schematic diagram of the solution, fig = true.
     # If fig = false is given, no plot is shown.
     # stages is a main function of
