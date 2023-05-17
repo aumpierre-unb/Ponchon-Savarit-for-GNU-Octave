@@ -1,4 +1,4 @@
 # ponchon-savarit is a toolbox for the Ponchón-Savarit method for GNU Octave.
 toolbox >> Ponchón-Savarit
 Functions
- stages refmin qR2S
+ stages refmin qR2S qS2R RS2q
