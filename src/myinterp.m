@@ -19,8 +19,7 @@
 
 function x=myinterp(f,P,Q,a,b)
     # Syntax:
-    #
-    # [x]=myinterp(f,P,Q,a,b)
+    # -- x=myinterp(f,P,Q,a,b)
     #
     # myinterp computes the intecection of
     #  a function and a stright line defined by two points,

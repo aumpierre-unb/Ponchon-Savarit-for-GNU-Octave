@@ -19,8 +19,7 @@
 
 function x2=bissection(f,x1,x2)
     # Syntax:
-    #
-    # [x2]=bissection(f,x1,x2)
+    # -- x2=bissection(f,x1,x2)
     #
     # bissection computes the root of
     #  a function using the method of bissection

@@ -17,18 +17,18 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function R=refmin(data,X,q)
+function [R,S]=refmin(data,X,q)
     # Syntax:
+    # -- [R,S]=refmin(data,X,q)
     #
-    # R=refmin(data,X,q)
-    #
-    # refmin computes the minimum value of the reflux ratio
+    # refmin computes the minimum reflux ratios
     #  of a distillation column
     #  using the Ponchón-Savarit method given
     #  a x-h-y-H matrix of the liquid and the vapor fractions
     #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed and
     #  the feed quality.
+    # If q = 1, q is reset to q = 1 - 1e-10.
     # refmin is a main function of
     #  the ponchon-savarit toolbox for GNU Octave.
     #
@@ -52,8 +52,7 @@ function R=refmin(data,X,q)
     #       0.88  0.300 0.955 1.425;
     #       1.    0.263 1.    1.405];
     # x=[0.88 0.46 0.08 0.11];
-    # q=0.52;
-    # r=refmin(data,x,q)
+    # [r,s]=refmin(data,x,q=0.52)
     #
     # # Compute the minimum value of the reflux ratio
     # # of a distillation column for acetone and methanol given
@@ -77,29 +76,32 @@ function R=refmin(data,X,q)
     #       0.9    2.266 0.958    17.680;
     #       1      2.250 1        17.390];
     # x=[0.88 0.46 0.11];
-    # q=1;
-    # r=refmin(data,x,q)
+    # [r,s]=refmin(data,x,q=1)
     #
-    # See also: stages, qR2S.
+    # See also: stages, qR2S, qS2R, RS2q.
     xD=X(1);
     xF=X(2);
     xB=X(3);
-    if xD<xF
+    if xD<xF || xB>xF
         error("Inconsistent feed and/or products compositions.");
     end
     if q==1
-        q=1-1e-10;
+        q=q-1e-10;
     end
-    g=@(x) interp1(data(:,1),data(:,2),x);
-    k=@(x) interp1(data(:,3),data(:,4),x);
+    x2h=@(x) interp1(data(:,1),data(:,2),x);
+    y2H=@(x) interp1(data(:,3),data(:,4),x);
     foo=@(x) q/(q-1)*x-xF/(q-1);
     bar=@(x) interp1(data(:,1),data(:,3),x)-foo(x);
     x1=bissection(bar,min(data(:,1)),max(data(:,1)));
-    h1=g(x1);
+    h1=x2h(x1);
     y1=interp1(data(:,1),data(:,3),x1);
-    H1=k(y1);
-    hliq=g(xD);
-    Hvap=k(xD);
+    H1=y2H(y1);
+    h2=x2h(xD);
+    H2=y2H(xD);
     hdelta=(H1-h1)/(y1-x1)*(xD-x1)+h1;
-    R=(hdelta-Hvap)/(Hvap-hliq);
+    h3=x2h(xB);
+    H3=y2H(xB);
+    hlambda=(H1-h1)/(y1-x1)*(xB-x1)+h1;
+    R=(hdelta-H2)/(H2-h2);
+    S=(hlambda-h3)/(h3-H3);
 end
