@@ -28,7 +28,7 @@ function [R,S]=refmin(data,X,q)
     #  at equilibrium and their enthalpies,
     #  the vector of the fractions of the products and the feed and
     #  the feed quality.
-    # If q = 1, q is reset to q = 1 - 1e-10.
+    # If feed is saturated liquid q = 1, q is reset to q = 1 - 1e-10.
     # refmin is a main function of
     #  the ponchon-savarit toolbox for GNU Octave.
     #

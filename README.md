@@ -149,10 +149,6 @@ where *B* and *x*<sub>*B*</sub> are the column's bottom product and its composit
 
 `stages` computes the number of theoretical stages of a distillation column using the Ponchón-Savarit method given a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions at equilibrium and their enthalpies, the vector of the fractions of the products and the feed and two paramaeters aong the feed quality, the reflux ratio at the top of the column and the reflux ratio at the bottom of the column.
 
-By default, stages plots a schematic diagram of the solution, *fig* = *true*. If *fig* = *false* is given, no plot is shown.
-
-By default, `stages` plots a schematic diagram of the solution, *fig* = *true*.
-
 **Syntax:**
 
 ```dotnetcli
@@ -160,6 +156,10 @@ N=stages(data,X,q,R,:[,fig=true])
 N=stages(data,X,q,:,S[,fig=true])
 N=stages(data,X,:,R,S[,fig=true])
 ```
+
+By default, stages plots a schematic diagram of the solution, fig = true. If fig = false is given, no plot is shown.
+
+By default, `stages` plots a schematic diagram of the solution, fig = true.
 
 **Examples:**
 
@@ -231,13 +231,13 @@ N=stages(data,x,:,R,S,fig=false)
 
 `refmin` computes the minimum value of the reflux ratio of a distillation column using the Ponchón-Savarit method given a *x*-*h*-*y*-*H* matrix of the liquid and the vapor fractions at equilibrium and their enthalpies, the vector of the fractions of the products and the feed and the feed quality.
 
-If q = 1, q is reset to q = 1 - 1e-10.
-
 **Syntax:**
 
 ```dotnetcli
 [R,S]=refmin(data,X,q)
 ```
+
+If feed is saturated liquid q = 1, q is reset to q = 1 - 1e-10.
 
 **Examples:**
 
