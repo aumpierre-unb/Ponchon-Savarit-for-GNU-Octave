@@ -171,7 +171,7 @@ function N=stages(data,X,q=NaN,R=NaN,S=NaN,fig=true)
     N=size(x,1)-1-1+(xB-y(end-1))/(y(end)-y(end-1));
     if fig
         figure('position',[100 100 500 800]);
-        subplot(2,1,1)
+        subplot(2,1,1);
         hold on;
         plot(data(:,1),data(:,2),'-bd','linewidth',1.25);
         plot(data(:,3),data(:,4),'-rd','linewidth',1.25);
