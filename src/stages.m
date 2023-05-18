@@ -38,7 +38,6 @@ function N=stages(data,X,q=NaN,R=NaN,S=NaN,fig=true)
     #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
-    #
     # # Compute the number of theoretical stages
     # # of a distillation column for acetone and methanol
     # # from the bottom to the top of the column given
@@ -123,7 +122,7 @@ function N=stages(data,X,q=NaN,R=NaN,S=NaN,fig=true)
     if xD<xF || xB>xF
         error("Inconsistent feed and/or products compositions.");
     end
-    a=isnan([q,R,S])==0;
+    a=isnan([q R S])==0;
     if sum(a)~=2
         error("psychro demands two and only two parameters.\nUnknowns must be assigned with ':'.");
     end
@@ -151,7 +150,6 @@ function N=stages(data,X,q=NaN,R=NaN,S=NaN,fig=true)
     hdelta=(H2-h2)*R+H2;
     hlambda=(hdelta-hF)/(xD-xF)*(xB-xF)+hF;
     bar=@(x) (H1-h1)/(y1-x1)*(x-x1)+h1;
-    xi=myinterp(bar,[xD hdelta],[xB hlambda],min(data(:,1)),max(data(:,1)));
     y=[xD];
     x=[y2x(y(end))];
     while x(end)>xB

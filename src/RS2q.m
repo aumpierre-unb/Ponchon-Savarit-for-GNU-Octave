@@ -17,7 +17,7 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function S=RS2q(data,X,R,S)
+function q=RS2q(data,X,R,S)
     # Syntax:
     # -- q=RS2q(data,X,q,R)
     #
@@ -33,7 +33,6 @@ function S=RS2q(data,X,R,S)
     #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
-    #
     # # Compute the feed quality
     # # of a distillation column for acetone and methanol given
     # # a matrix that relates the liquid and the vapor fractions
@@ -98,10 +97,10 @@ function S=RS2q(data,X,R,S)
     H3=y2H(xB);
     hlambda=(h3-H3)*S+h3;
     hF=(hdelta-hlambda)/(xD-xB)*(xF-xB)+hlambda;
-    foo=@(x) (x2H(x)-x2h(x))/(x2y(x)-x)-(x2h(x)-hF)/(x-xF)
-    x0=interp2(x2h,z,[xB hlambda],[xD hdelta])
-    x1=bissection(foo,xB,xD);
+    foo=@(x) (x2H(x)-x2h(x))/(x2y(x)-x)-(x2h(x)-hF)/(x-xF);
+    x0=myinterp(x2h,[xB;hlambda],[xD;hdelta],min(data(:,1)),max(data(:,1)));
+    % x1=newtonraphson(foo,x0);
+    x1=bissection(foo,min(data(:,1)),max(data(:,1)));
     y1=x2y(x1);
     q=(y1-xF)/(y1-x1);
 end
-

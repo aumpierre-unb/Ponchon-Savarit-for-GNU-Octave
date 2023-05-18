@@ -33,7 +33,6 @@ function [R,S]=refmin(data,X,q)
     #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
-    #
     # # Compute the minimum value of the reflux ratio
     # # of a distillation column for oxygen and nitrogen given
     # # a matrix that relates the liquid and the vapor fractions
@@ -51,7 +50,7 @@ function [R,S]=refmin(data,X,q)
     #       0.685 0.349 0.86  1.465;
     #       0.88  0.300 0.955 1.425;
     #       1.    0.263 1.    1.405];
-    # x=[0.88 0.46 0.08 0.11];
+    # x=[0.93;0.41;0.07];
     # [r,s]=refmin(data,x,q=0.52)
     #
     # # Compute the minimum value of the reflux ratio
@@ -75,7 +74,7 @@ function [R,S]=refmin(data,X,q)
     #       0.8    2.284 0.915    17.980;
     #       0.9    2.266 0.958    17.680;
     #       1      2.250 1        17.390];
-    # x=[0.88 0.46 0.11];
+    # x=[0.88;0.46;0.08];
     # [r,s]=refmin(data,x,q=1)
     #
     # See also: stages, qR2S, qS2R, RS2q.

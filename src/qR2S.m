@@ -33,7 +33,6 @@ function S=qR2S(data,X,q,R)
     #  the ponchon-savarit toolbox for GNU Octave.
     #
     # Examples:
-    #
     # # Compute the reflux ratio at the bottom
     # # of a distillation column for acetone and methanol given
     # # a matrix that relates the liquid and the vapor fractions
