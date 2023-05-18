@@ -198,7 +198,7 @@ data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
      1.    0.263 1.    1.405];
 x=[0.88;0.44;0.08];
 [r,s]=refmin(data,x,q=0.55)
-N=stages(data,x,q,S=1.46*s)
+N=stages(data,x,q,:,S=1.46*s)
 ```
 
 Compute the number of theoretical stages
