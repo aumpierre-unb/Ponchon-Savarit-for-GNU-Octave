@@ -93,6 +93,29 @@ function N=stages(data,X,q=NaN,R=NaN,S=NaN,fig=true)
     # [r,s]=refmin(data,x,q=0.55)
     # N=stages(data,x,q,:,S=1.46*s)
     #
+    # # Compute the number of theoretical stages
+    # # of a distillation column for oxygen and nitrogen
+    # # from the bottom to the top of the column given
+    # # a matrix that relates the liquid and the vapor fractions
+    # # and their enthalpies at equilibrium,
+    # # the composition of the distillate is 92 %,
+    # # the composition of the feed is 59 %,
+    # # the composition of the bottoms is 9 %,
+    # # the reflux ratio at the bottom of the column is 1.9,
+    # # the reflux ratio at the top of the column is 1.5:
+    # data=[0.    0.420 0.    1.840; # enthalpy in kcal/mmol
+    #       0.075 0.418 0.193 1.755;
+    #       0.17  0.415 0.359 1.685;
+    #       0.275 0.410 0.50  1.625;
+    #       0.39  0.398 0.63  1.570;
+    #       0.525 0.378 0.75  1.515;
+    #       0.685 0.349 0.86  1.465;
+    #       0.88  0.300 0.955 1.425;
+    #       1.    0.263 1.    1.405];
+    # x=[0.92;0.59;0.09];
+    # q=RS2q(data,x,R=1.5,S=1.9)
+    # N=stages(data,x,:,R,S,fig=false)
+    #
     # See also: refmin, qR2S, qS2R, RS2q.
     xD=X(1);
     xF=X(2);
