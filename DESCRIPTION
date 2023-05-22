@@ -4,7 +4,7 @@ Date: 2023-05-03
 Author: Alexandre Umpierre (aumpierre@gmail.com)
 Maintainer: Alexandre Umpierre
 Title: Ponchón-Savarit
-Description: A toolbox for the Ponchón-Savarit method.
+Description: A toolbox for the Ponchon-Savarit method.
 Categories: package
 Depends: octave (>=4.0.0)
 License: GPLv3+
