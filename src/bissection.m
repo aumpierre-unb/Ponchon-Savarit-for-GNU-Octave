@@ -17,14 +17,14 @@
 # (license GNU GPLv3.txt).
 # It is also available at https://www.gnu.org/licenses/.
 
-function x2=bissection(f,x1,x2)
+function x2=bisection(f,x1,x2)
     # Syntax:
-    # -- x2=bissection(f,x1,x2)
+    # -- x2=bisection(f,x1,x2)
     #
-    # bissection computes the root of
-    #  a function using the method of bissection
+    # bisection computes the root of
+    #  a function using the method of bisection
     #  given it is found between the guess values.
-    # bissection is an auxiliary function of
+    # bisection is an auxiliary function of
     #  the ponchon-savarit toolbox for GNU Octave.
     while abs(f(x2))>1e-4
         x=(x1+x2)/2;

@@ -100,7 +100,7 @@ function q=RS2q(data,X,R,S)
     foo=@(x) (x2H(x)-x2h(x))/(x2y(x)-x)-(x2h(x)-hF)/(x-xF);
     x0=myinterp(x2h,[xB;hlambda],[xD;hdelta],min(data(:,1)),max(data(:,1)));
     % x1=newtonraphson(foo,x0);
-    x1=bissection(foo,min(data(:,1)),max(data(:,1)));
+    x1=bisection(foo,min(data(:,1)),max(data(:,1)));
     y1=x2y(x1);
     q=(y1-xF)/(y1-x1);
 end

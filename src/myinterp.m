@@ -23,11 +23,11 @@ function x=myinterp(f,P,Q,a,b)
     #
     # myinterp computes the intecection of
     #  a function and a stright line defined by two points,
-    #  using bissection method given
+    #  using bisection method given
     #  it is between the guess values.
     # myinterp is an auxiliary function of
     #  the ponchon-savarit toolbox for GNU Octave.
     g=@(x) (Q(2)-P(2))/(Q(1)-P(1))*(x-P(1))+P(2);
     h=@(x) f(x)-g(x);
-    x=bissection(h,a,b);
+    x=bisection(h,a,b);
 end

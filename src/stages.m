@@ -140,7 +140,7 @@ function N=stages(data,X,q=NaN,R=NaN,S=NaN,fig=true)
     x2h=@(x) interp1(data(:,1),data(:,2),x);
     y2H=@(y) interp1(data(:,3),data(:,4),y);
     foo=@(x) q-(x2y(x)-xF)/(x2y(x)-x);
-    x1=bissection(foo,min(data(:,1)),max(data(:,1)));
+    x1=bisection(foo,min(data(:,1)),max(data(:,1)));
     h1=x2h(x1);
     y1=x2y(x1);
     H1=y2H(y1);
