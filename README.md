@@ -27,7 +27,7 @@ https://zenodo.org/account/settings/github/repository/aumpierre-unb/Ponchon-Sava
 
 The following is a very short introduction to the `ponchon-savarit` toolbox for GNU Octave.
 
-This text is divided in two main sections: The Theory and The `ponchon-savarit` Toolbox.
+This text is divided in two main sections: **The Theory** and **The `ponchon-savarit` Toolbox**.
 
 # The Theory
 
