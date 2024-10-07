@@ -427,6 +427,6 @@ q=RS2q(data,x,2,1.3)
 [Psychrometrics-for-GNU-Octave](https://github.com/aumpierre-unb/Psychrometrics-for-GNU-Octave),
 [Internal-Fluid-Flow-for-GNU-Octave](https://github.com/aumpierre-unb/Internal-Fluid-Flow-for-GNU-Octave).
 
-Copyright &copy; 2022 2023 Alexandre Umpierre
+Copyright &copy; 2022 2023 2024 Alexandre Umpierre
 
 email: <aumpierre@gmail.com>
